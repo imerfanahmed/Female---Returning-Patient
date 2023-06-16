@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Female - Returning Patient - Dosage Calculator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <h1>Female - Returning Patient</h1>
+  <h2>Dosage Calculator</h2>
+
+  <div id="testosteroneDoseBlock">
+    <h3>New Estradiol Dose: <span id="newEstradiolDose"></span></h3>
+    <h3>New Testosterone Dose: <span id="newTestosteroneDose"></span></h3>
+    <h3>New Progesterone Dose: <span id="newProgesteroneDose"></span></h3>
+
+
+
+<h6>Last Estradiol Dose: <span id="lastEstradiolDoseLabel"></span></h6>
+<h6>Last Testosterone Dose: <span id="lastTestosteroneDoseLabel"></span><h6>
+  <h6>Last Progesterone Dose: <span id="lastProgesteroneDoseLabel"></span></h6>
+  </div>
+  <div id="dialogueContainer"></div>
+  
+
+ 
+  <form action="/submit" method="post">
+    <fieldset>
+      <legend>Patient Information</legend>
+      <label for="patientName">Patient Name:</label>
+      <input type="text" id="patientName" name="patientName" required><br><br>
+    
+      <label for="patientAge">Patient Age:</label>
+      <input type="number" id="patientAge" name="patientAge"><br><br>
+    
+      <label for="patientWeight">Patient Weight (lbs):</label>
+      <input type="number" id="patientWeight" name="patientWeight"><br><br>
+    
+      <label for="patientEthnicity">Patient Ethnicity:</label>
+      <select id="patientEthnicity" name="patientEthnicity">
+        <option value="">Select</option>
+        <option value="Caucasian">Caucasian</option>
+        <option value="African-American">African-American</option>
+        <option value="Hispanic">Hispanic</option>
+        <option value="Asian">Asian</option>
+        <option value="Middle Eastern">Middle Eastern</option>
+        <option value="Native American">Native American</option>
+        <option value="Others">Others</option>
+
+      </select><br><br>
+
+      <label for="mammogramUpdate">Mammogram Up-to-Date?</label>
+      <select id="mammogramUpdate" name="mammogramUpdate" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br><br>
+
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend>Last Procedure Information</legend>
+      <label for="lastProcedureDate">Last Procedure Date (mm/dd/yyyy):</label>
+      <input type="date" id="lastProcedureDate" name="lastProcedureDate" required><br><br>
+    
+      <label for="lastProgesteroneDose">Last Progesterone Dose:</label>
+      <select id="lastProgesteroneDose" name="lastProgesteroneDose" required>
+        <option value="">Select</option>
+        <option value="0.0">0.0</option>
+        <option value="100.0">100.0</option>
+        <option value="200.0">200.0</option>
+      </select><br><br>
+    
+      <label for="lastEstradiolDose">Last Estradiol Dose:</label>
+      <select id="lastEstradiolDose" name="lastEstradiolDose" required>
+        <option value="">Select</option>
+        <option value="0.0">0.0</option>
+        <option value="6.0">6.0</option>
+        <option value="10.0">10.0</option>
+        <option value="12.5">12.5</option>
+        <option value="15.0">15.0</option>
+        <option value="18.0">18.0</option>
+      </select><br><br>
+    
+      <label for="lastTestosteroneDose">Last Testosterone Dose:</label>
+      <select id="lastTestosteroneDose" name="lastTestosteroneDose" required>
+        <option value="">Select</option>
+        <option value="50.0">50.0</option>
+        <option value="75.0">75.0</option>
+        <option value="87.5">87.5</option>
+        <option value="100.0">100.0</option>
+        <option value="112.5">112.5</option>
+        <option value="125.0">125.0</option>
+        <option value="137.5">137.5</option>
+        <option value="150.0">150.0</option>
+        <option value="162.5">162.5</option>
+        <option value="175.0">175.0</option>
+        <option value="200.0">200.0</option>
+      </select><br><br>
+    </fieldset>
+    <br><br>
+
+    <fieldset>
+      <legend>Symptoms Experienced</legend>
+      <label for="symptomRelief">Did patient experience symptom relief with last pellet dose?</label>
+      <select id="symptomRelief" name="symptomRelief" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br><br>
+    </fieldset>
+    <br><br>
+
+
+    <fieldset>
+      <legend>Laboratory Data</legend>
+      <label for="fsh">FSH:</label>
+      <input type="number" id="fsh" name="fsh" step="0.01"><br><br>
+    
+      <label for="totalTestosterone">Total Testosterone:</label>
+      <input type="number" id="totalTestosterone" name="totalTestosterone" step="0.01"><br><br>
+
+      <label for="freeT3">Free T3:</label>
+      <input type="number" id="freeT3" name="freeT3" step="0.01"><br><br>
+    </fieldset>
+
+    <input type="submit" value="Calculate">
+  </form>
+</body>
+</html>
