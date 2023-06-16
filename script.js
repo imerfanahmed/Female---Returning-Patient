@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function() {
     function calculateNewDoses() {
       // Get the input values
       var mammogramUpdate = document.getElementById("mammogramUpdate").value;
-      console.log(mammogramUpdate)
+      //console.log(mammogramUpdate)
       var lastProgesteroneDose = parseFloat(document.getElementById("lastProgesteroneDose").value);
       var lastEstradiolDose = parseFloat(document.getElementById("lastEstradiolDose").value);
       var lastTestosteroneDose = parseFloat(document.getElementById("lastTestosteroneDose").value);
@@ -27,7 +27,8 @@ window.addEventListener("DOMContentLoaded", function() {
       // Calculate the new doses based on the input values
       var newProgesteroneDose = calculateNewProgesteroneDose(mammogramUpdate,lastEstradiolDose);
       var newEstradiolDose = calculateNewEstradiolDose(mammogramUpdate, lastEstradiolDose);
-      var newTestosteroneDose = calculateNewTestosteroneDose(symptomRelief,lastTestosteroneDose);
+
+      var newTestosteroneDose = calculateNewTestosteroneDose(symptomRelief.value,lastTestosteroneDose);
 
       // Update the result labels with the calculated values
       newProgesteroneDoseLabel.textContent = newProgesteroneDose + " mg Orally";
@@ -38,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 // Function to calculate the new Progesterone dose !!!!
 function calculateNewProgesteroneDose(mammogramUpdate, lastEstradiolDose) {
-    console.log(mammogramUpdate,lastEstradiolDose);
+    //console.log(mammogramUpdate,lastEstradiolDose);
 
     if (mammogramUpdate === "No") {
         return 0;
@@ -65,7 +66,8 @@ function calculateNewProgesteroneDose(mammogramUpdate, lastEstradiolDose) {
 
 
 // Function to calculate the new Testosterone dose !!!!
-function calculateNewTestosteroneDose(symptomRelief, lastTestosteroneDose) {
+  function calculateNewTestosteroneDose(symptomRelief, lastTestosteroneDose) {
+    //console.log(symptomRelief,lastTestosteroneDose)
     if (symptomRelief === "No") {
       return lastTestosteroneDose;
     } else if (symptomRelief === "Yes") {
